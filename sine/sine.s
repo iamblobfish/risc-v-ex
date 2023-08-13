@@ -1,6 +1,6 @@
 .globl sine
 
-default_answer = 0x312d
+default_answer = "0.0"
 
 .text
 # if you need some data, put it here
