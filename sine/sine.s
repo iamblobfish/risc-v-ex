@@ -2,12 +2,10 @@
 
 .section .data
 default_value:
-    .align 8
-    .asciiz "0.0"
+    .asciz "0.0"
     
 one_value:
-    .align 8
-    .asciiz "0.0"
+    .asciz "1.0"
     
 
 .section .text
