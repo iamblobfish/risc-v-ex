@@ -1,9 +1,6 @@
 .globl sine
 
-default_answer = "0.0"
-
-.text
-# if you need some data, put it here
+.section .data
 
 .section .text
 
@@ -12,11 +9,15 @@ default_answer = "0.0"
 #	a1 -- input buffer will contain string with the argument
 #	a2 -- output string buffer for the string result
 sine:
-	# implement here
-	
-	li	a3, default_answer
-	sw	a3, 0(a2)
-
-
+	lb t0, 0(a1)
+ 	li t2, '0'
+  	bgt t0, t2, output
+   	lb t2, 2(a1)
+output:
+ 	sb t0, 0(a2)
+  	sb '.', 1(a2)
+   	sb t2, 2(a2)
+ 
+done:
 	ret
 	
