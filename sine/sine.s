@@ -1,18 +1,20 @@
 .globl sine
 
 .section .data
+default_value:
+    .asciiz "0.0"
+one_value:
+    .asciiz "0.0"
+    
 
 .section .text
+.globl main
 
-# Sine
-#   Params
-#	a1 -- input buffer will contain string with the argument
-#	a2 -- output string buffer for the string result
 sine:
- 	sw a1, 0(a2)
- 	li t2, '0'
+    la  a2, default_value  
+    lb t0, 0(a1)
+ 	  li t2, '0'
    	bgt t0, t2, output
-     	lb t2, 2(a1)
-  output:
-     	sb t2, 2(a2)
-      ret
+    la  a2, one_value 
+output:
+    ret
